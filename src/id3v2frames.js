@@ -31,7 +31,7 @@
         switch( bite )
         {
             case 0x00:
-                charset = 'iso-8859-1';
+                charset = 'gbk';
                 break;
                 
             case 0x01:

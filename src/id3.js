@@ -5,6 +5,7 @@
  * 
  * Extended by António Afonso (antonio.afonso@opera.com), Opera Software ASA
  * Modified by António Afonso <antonio.afonso gmail.com>
+ * replace `iso-8859-1` to `GBK` by Berton Zhu <bertonzh@gmail.com>
  */
 
 (function(ns) {

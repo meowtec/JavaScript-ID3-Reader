@@ -98,6 +98,35 @@ var StringUtils = {
         string.bytesReadCount = ix;
         return string;
     },
+	readGBKString: function(bytes, maxBytes){
+		console.log(bytes)
+			maxBytes = Math.min(maxBytes||bytes.length, bytes.length);
+		var array = bytes,
+				start = 0,
+				end = maxBytes;
+
+		var str = '';
+
+		var gbk = 0;
+		var intGBK;
+		for(var i=start;i<end;i++){
+			var item = array[i];
+			if(item>128&&!intGBK){
+				intGBK = 1;
+				gbk = item;
+
+			}else{
+				intGBK = 0;
+				gbk = gbk*256+item;
+				str = str + (fromGBKCode(gbk)||'');
+				gbk = 0;
+
+			}
+
+		}
+		return str
+
+	},
     readNullTerminatedString: function(bytes, maxBytes) {
         var arr = [];
         maxBytes = maxBytes || bytes.length;

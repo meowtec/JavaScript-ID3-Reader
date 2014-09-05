@@ -2,6 +2,7 @@ CLOSURE_COMPILER=./compiler.jar
 
 java -jar "$CLOSURE_COMPILER" \
     --compilation_level ADVANCED_OPTIMIZATIONS \
+    --js src/gbkmap.js \
     --js src/stringutils.js \
     --js src/binaryfile.js \
     --js src/bufferedbinaryajax.js \
